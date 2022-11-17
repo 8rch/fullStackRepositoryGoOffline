@@ -1,0 +1,11 @@
+# use mod_rewrite for pretty URL support
+RewriteEngine on
+# if a directory or a file exists, use the request directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward the request to index.php
+RewriteRule . index.php
+Header set Access-Control-Allow-Origin "*"
+Header Set Access-Control-Allow-Headers "Content-Type,Access-Control-Allow-Headers,lang"
+Header add Access-Control-Allow-Methods "GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH"
+

@@ -1,0 +1,2 @@
+INSERT INTO public."period" (init_date,end_date,end_date_to_deadline,end_date_exam_score_deadline,created_at,updated_at,deleted_at,created_by,updated_by,deleted_by) VALUES
+	 ('2021-01-01 00:00:00','2021-12-31 00:00:00','2021-11-01 00:00:00','2021-12-01 00:00:00','2021-04-05 18:14:18',NULL,NULL,1,NULL,0);

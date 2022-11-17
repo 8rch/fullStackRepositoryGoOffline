@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Cuestionario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngIf="isLoading">
+        <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+            <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+        </ion-label>
+    </ion-item>
+
+    <ng-container *ngIf="topicsQuestionnaire$ | async as topicsQuestionnaire">
+        <ion-card>
+            <ion-card-header *ngIf="topicsQuestionnaire[0]">
+                <ion-card-title >
+                    {{topicsQuestionnaire[0].topic_code }}
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <form [formGroup]="topicQuestionaireForm" padding-right (ngSubmit)="onSubmit()">
+                    <ion-list padding *ngFor="let tQ of topicsQuestionnaire">
+                        <ion-card *ngIf="tQ.type == 'evaluation' || showReinforcementEvaluation">
+                            <ion-card-header>
+                                <ion-card-subtitle>
+                                    <ion-icon name="book-outline"></ion-icon>
+                                    {{tQ.type == 'evaluation' ? 'EVALUACIÓN' : 'REFUERZO'}}
+                                </ion-card-subtitle>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <div [innerHTML]="tQ.content"></div>
+                                <ion-list>
+                                    <ion-radio-group formControlName="{{tQ.type}}" required>
+                                        <ion-list-header>
+                                            <ion-label>Seleccione la respuesta correcta</ion-label>
+                                        </ion-list-header>
+                                        <ion-item *ngFor="let qty of tQ.questions | keyvalue">
+                                            <ion-label class="ion-text-wrap">{{qty.value}}</ion-label>
+                                            <ion-radio slot="start" value="{{qty.key}}">{{qty.value}}</ion-radio>
+                                        </ion-item>
+                                    </ion-radio-group>
+                                    <div *ngIf="tQ.type.invalid && (tQ.type.dirty || tQ.type.touched)"
+                                         class="alert alert-danger">
+                                        <div *ngIf="tQ.type.errors.required">
+                                            Respuesta es requerida
+                                        </div>
+                                    </div>
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-list>
+
+                    <ion-button type="submit" shape="round" fill="outline" expand="full">Guardar y continuar
+                    </ion-button>
+                </form>
+            </ion-card-content>
+        </ion-card>
+    </ng-container>
+
+</ion-content>

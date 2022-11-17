@@ -1,0 +1,11 @@
+version: "3"
+services:
+  angular-dev:
+    build: .
+    ports:
+      - 8100:8100
+    volumes:
+      - ./:/app/
+      # - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,11 @@
+INSERT INTO public.user_visit_log ("token",ip,"language",user_agent,user_id,visit_time,browser,os) VALUES
+	 ('606b571cc88aa','186.33.134.186','en','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617647388,'Chrome','Windows'),
+	 ('606b8beae6788','190.152.200.223','es','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.421',1,1617660906,'Chrome','Windows'),
+	 ('606b940989a7e','190.152.200.223','es','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617662985,'Chrome','Windows'),
+	 ('606baa0a012b7','186.33.134.186','en','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617668618,'Chrome','Windows'),
+	 ('606bc65c157c2','172.18.0.1','en','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617675868,'Chrome','Windows'),
+	 ('606c50a3c798a','186.33.134.186','en','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617711267,'Chrome','Windows'),
+	 ('606c6eed24c2f','190.152.200.223','es','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617719021,'Chrome','Windows'),
+	 ('606c85b9efd1f','190.152.200.223','es','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 OPR/73.0.3856.421',1,1617724857,'Chrome','Windows'),
+	 ('606cb3e901c0f','172.18.0.1','en','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',1,1617736681,'Chrome','Windows'),
+	 ('606cb5c7bce0f','186.33.134.186','  ','Dalvik/2.1.0 (Linux; U; Android 7.1.1; E6633 Build/32.4.A.1.54)',2,1617737159,'Android','Android');

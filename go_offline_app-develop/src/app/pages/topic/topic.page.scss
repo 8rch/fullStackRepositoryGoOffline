@@ -1,0 +1,23 @@
+:host{
+  ion-chip{
+    width: 100% !important;
+    ion-label.progress_label{
+      position: absolute !important;
+      left:50% !important;
+      top:0 !important;
+    }
+    ion-progress-bar{
+      margin: 0 0.25rem !important;
+    }
+  }
+
+  ::ng-deep {
+    ion-calendar-month {
+      .custom-day {
+        p{
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}

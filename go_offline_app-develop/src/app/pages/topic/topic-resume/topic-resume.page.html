@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Explicación del tema</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngIf="isLoading">
+        <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+            <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+        </ion-label>
+    </ion-item>
+    <ng-container *ngIf="topics$ | async as topics">
+        <ion-list padding *ngFor="let t of topics">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        <ion-icon name="book-outline"></ion-icon>
+                        {{t.topic_code}}
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-badge color="primary">Intento N# {{t.attempt}}</ion-badge>
+                    <div [innerHTML]="t.content_topic_content"></div>
+                    <ion-button shape="round" fill="outline" expand="full" (click)="goTo(t)">Ir a cuestionario
+                    </ion-button>
+                </ion-card-content>
+            </ion-card>
+            <ion-card>
+            </ion-card>
+        </ion-list>
+    </ng-container>
+</ion-content>

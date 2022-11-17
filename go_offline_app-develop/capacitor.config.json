@@ -1,0 +1,15 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "go_offline_app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/home/mau/.local/share/JetBrains/Toolbox/apps/AndroidStudio/ch-0/201.7042882/bin/studio.sh",
+  "windowsAndroidStudioPath": "C:\\Users\\brugu\\AppData\\Local\\JetBrains\\Toolbox\\apps\\AndroidStudio\\ch-0\\201.7042882\\bin\\studio64.exe"
+}

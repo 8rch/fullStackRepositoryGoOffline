@@ -1,0 +1,2 @@
+INSERT INTO public.geo_user_data (long,lat,extra,user_id,created_at,deleted_at,deleted_by,created_by,updated_at,updated_by) VALUES
+	 ('-78.1210288','0.3625553',NULL,2,'2021-04-06 19:26:06',NULL,0,2,'2021-04-06 19:26:06',2);

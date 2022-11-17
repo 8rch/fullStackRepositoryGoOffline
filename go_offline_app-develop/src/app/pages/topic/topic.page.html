@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Este es tu pensum académico</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-item *ngIf="isLoading">
+        <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+            <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+        </ion-label>
+    </ion-item>
+
+    <ng-container *ngIf="(pensumAssigned$ | async) as groupTopic">
+        <ion-card>
+            <div class="ion-padding">
+                <ion-calendar
+                        [(ngModel)]="dateMulti"
+                        [options]="optionsMulti"
+                        [type]="type"
+                        [format]="formatDateCalendar"
+                        (select)="onClickCalendar($event)"
+                >
+                </ion-calendar>
+            </div>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Materias</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ng-container *ngFor="let group of groupTopic|async  ">
+                    <ion-chip outline color="secondary" (click)="callPopover($event,group)">
+                            <ion-label>{{group[0].materia_code}}</ion-label>
+                            <ion-label class="progress_label" >
+                                {{(progressBySubject[group[0].materia_code])*100  | number: '1.2-2'}} %
+                            </ion-label>
+                        <ion-progress-bar color="secondary" [value]="progressBySubject[group[0].materia_code]"></ion-progress-bar>
+                        <ion-icon name="library-outline"></ion-icon>
+                    </ion-chip>
+                </ng-container>
+            </ion-card-content>
+        </ion-card>
+    </ng-container>
+
+    <ng-container *ngIf="loginLogs$ | async as loginLogs">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Últimos ingresos al sistema</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid  *ngFor="let lL of loginLogs.reverse()">
+                    <ion-row>
+                        <ion-col>
+                            {{lL.visit_time * 1000 | date:'yyyy-MM-dd HH:mm:ss'}}
+                        </ion-col>
+                        <ion-col>
+                            {{lL.os}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+    </ng-container>
+
+</ion-content>

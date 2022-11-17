@@ -1,0 +1,13 @@
+https://www.yiiframework.com/extension/hail812/yii2-adminlte3
+https://github.com/mootensai/yii2-enhanced-gii
+https://github.com/webvimark/user-management
+https://github.com/kartik-v/yii2-datecontrol
+https://github.com/dersonsena/yii2-jwt-tools
+
+TODO: https://github.com/yii2mod/yii2-swagger
+ php ./yii migrate/create --migrationPath=console/migrations/ create_geo_user_data_table --fields="long:string:notNull,lat:string:notNull,date:timestamp:notNull, extra:text,user_id:integer:notNull:foreignKey(user)"
+
+php ./yii migrate/create --migrationPath=console/migrations create_school_period_table --fields="fecha_inicio:,fecha_fin,inicio_clase, fin_clase, entrega_nota_primera_parcial:date, entrega_nota_segunda_parcial:date, fecha_examen_final, fecha_entrega_calificaciones_examn_final
+
+//https://summernote.org/
+https://jsoneditoronline.org/#left=local.cuyaki&right=local.xunisi

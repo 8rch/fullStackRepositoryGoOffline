@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title> Bienvenido a Go-Offline </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+    <ion-card>
+        <form (ngSubmit)="submitForm()" [formGroup]="loginFormGroup">
+            <ion-card-header>
+                <ion-card-subtitle>Ingrese sus credenciales</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>usuario</ion-label>
+                    <ion-input type="text" formControlName="username"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>clave</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <ion-button   type="submit" expand="block">Ingresar</ion-button>
+            </ion-card-content>
+        </form>
+    </ion-card>
+
+
+</ion-content>
